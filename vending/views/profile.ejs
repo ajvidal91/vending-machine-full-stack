@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Vending Machine Admin</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="page-header text-center">
+      <h1><span class="fa fa-unlock"></span> Admin Page</h1>
+      <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+
+
+    </div>
+
+
+
+    <!-- LOCAL INFORMATION -->
+    <div class="col-sm-6">
+      <div class="well">
+        <h3><span class="fa fa-user"></span> Local</h3>
+
+        <% if (user.local.email) { %>
+          <p>
+            <strong>id</strong>:
+            <%= user._id %><br>
+              <strong>email</strong>:
+              <%= user.local.email %><br>
+                <strong>password</strong>:
+                <%= user.local.password %>
+          </p>
+          <a href="/unlink/local" class="btn btn-default">Unlink</a>
+          <% } else { %>
+            <a href="/connect/local" class="btn btn-default">Connect Local</a>
+            <% } %>
+
+      </div>
+    </div>
+
+
+    <div class="col-sm-6">
+      <h2>Want to Add A New Item?</h2>
+      <h2>Instructions:<h2>
+        <h4>*Enter New Item Below*</h4>
+          <form action="/orders" method= "POST">
+          <fieldset>
+            <legend>Item - Name / Vending Number / Stock</legend>
+
+          <input type="text" name="name" value="" placeholder="Enter Item Name">
+          <input type="text" name="number" value="" placeholder="Enter Vending Number">
+          <input type="text" name="count" value="" placeholder="# In Stock">
+          <button type="submit" name="button">Submit Order</button>
+        </form>
+          <ul class="items">
+          <% for(var i=0; i < selection.length; i++) {%>
+            <li class="item">
+              <span><%= orders[i] .name %></span>
+              <span><%= orders[i].number %></span>
+              <span><%= orders[i].count %></span>
+              <span><%= orders[i].revenue %></span>
+            </li>
+          <% } %>
+          </ul>
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

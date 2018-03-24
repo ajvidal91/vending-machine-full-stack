@@ -1,0 +1,81 @@
+*{
+text-align: center;
+list-style: none;
+font-family: 'Roboto Slab', serif;
+}
+
+a{
+color: black;
+}
+
+body{
+
+background: #262626;
+}
+
+header{
+transform: translate(-25%,-25);
+text-align: center;
+
+}
+
+header h1{
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  font-size: 5em;
+  color: rgba(255,255,255,.1);
+}
+
+
+button{
+height: 100px;
+width: 100px;
+border-radius: 50%;
+}
+
+.sodaBtns{
+border: 1px solid black;
+width: 100%;
+
+background-repeat: repeat;
+}
+
+#pepsi{
+background-image: url("img/pepsi.png");
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+}
+
+#coke{
+background-image: url("img/coke.png");
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+}
+
+#dasani{
+background-image: url("img/dasani.png");
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+}
+
+#up{
+background-image: url("img/7up.png");
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+}
+
+#fanta{
+background-image: url("img/fanta.png");
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+}
+
+li{
+float: left;
+}
